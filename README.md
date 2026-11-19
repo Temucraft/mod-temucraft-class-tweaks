@@ -50,7 +50,7 @@ item cache is refreshed (delete the client's `Cache` folder after the update).
 
 - [mod-temucraft-ranged-autoattack](https://github.com/Temucraft/mod-temucraft-ranged-autoattack): its Auto Shot / Auto Throw (learned with the bow, gun, crossbow and thrown skills) is what
   other classes get with a new ranged weapon; Shoot is only taught when no attack came with the skill.
-- [mod-pet-tank](https://github.com/TheSCREWEDSoftware/mod-pet-tank)'s happiness floor and HappyPets agree (this one just keeps pets full).
+- [mod-temucraft-threat](https://github.com/Temucraft/mod-temucraft-threat)'s pet tank happiness floor and HappyPets agree (this one just keeps pets full).
 - [mod-world-randomizer](https://github.com/TheSCREWEDSoftware/mod-world-randomizer) gives rolled proficiencies on every login; opened skills simply stay.
 - With AnyWeapon off, NightElfPriestBows still lets night elf priests have the Bows skill (only Bows is opened, and
   only the module teaches it to them).
