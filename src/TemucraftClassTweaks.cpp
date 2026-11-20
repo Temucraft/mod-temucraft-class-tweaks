@@ -281,7 +281,7 @@ namespace
         settings.soulBagMaxChance = std::clamp(sConfigMgr->GetOption<int32>("Temucraft.ClassTweaks.SoulBags.MaxChance", 25), settings.soulBagMinChance, 100);
         settings.nightElfPriestBows = sConfigMgr->GetOption<bool>("Temucraft.ClassTweaks.NightElfPriestBows", true);
         settings.anyWeapon = sConfigMgr->GetOption<bool>("Temucraft.ClassTweaks.AnyWeapon", true);
-        settings.anyArmor = sConfigMgr->GetOption<bool>("Temucraft.ClassTweaks.AnyArmor", false);
+        settings.anyArmor = sConfigMgr->GetOption<bool>("Temucraft.ClassTweaks.AnyArmor", true);
         settings.raidWideAuras = sConfigMgr->GetOption<bool>("Temucraft.ClassTweaks.RaidWideAuras", true);
         settings.buffMinutes = sConfigMgr->GetOption<uint32>("Temucraft.ClassTweaks.BuffMinutes", 60);
         settings.happyPets = sConfigMgr->GetOption<bool>("Temucraft.ClassTweaks.HappyPets", true);

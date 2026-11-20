@@ -36,7 +36,8 @@
 #
 #    Temucraft.ClassTweaks.AnyArmor
 #        Description: The same for armor: cloth, leather, mail (40), plate (40) and shields (with Block).
-#        Default:     0
+#                     The client gets the same from tools/build_open_skills.py (patch-T).
+#        Default:     1
 #
 #    Temucraft.ClassTweaks.RaidWideAuras
 #        Description: Class auras, shouts and totems that reach only the party reach the whole raid. Heals stay
@@ -64,7 +65,7 @@ Temucraft.ClassTweaks.SoulBags.MinChance = 5
 Temucraft.ClassTweaks.SoulBags.MaxChance = 25
 Temucraft.ClassTweaks.NightElfPriestBows = 1
 Temucraft.ClassTweaks.AnyWeapon = 1
-Temucraft.ClassTweaks.AnyArmor = 0
+Temucraft.ClassTweaks.AnyArmor = 1
 Temucraft.ClassTweaks.RaidWideAuras = 1
 Temucraft.ClassTweaks.BuffMinutes = 60
 Temucraft.ClassTweaks.HappyPets = 1

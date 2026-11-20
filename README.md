@@ -20,7 +20,7 @@ items that stayed as they were in 3.3.5a. Everything happens on the server: no c
 | **Totemic Recall** is trained at level 10 (not 30) for 10 silver | Shamans | SQL |
 | **Bows for night elf priests**: they learn Bows and Shoot, like the priestesses of the moon | Night elf priests | `NightElfPriestBows` |
 | **Any weapon for anyone**: weapon masters teach every weapon and Dual Wield to every race and class (also Dual Wield without the shaman talent); a ranged weapon comes with the attack your class gets with it (Shoot, Throw, or another module's Auto Shot), else Shoot | Everyone | `AnyWeapon` (+ SQL) |
-| **Any armor for anyone** (off by default): cloth, leather, mail, plate and shields (with Block) | Everyone | `AnyArmor` (+ SQL) |
+| **Any armor for anyone**: cloth, leather, mail (40), plate (40) and shields (with Block) | Everyone | `AnyArmor` (+ SQL) |
 | **Raid-wide auras**: class auras, shouts, totems and party auras from talents reach the whole raid (heals stay party-wide) | Everyone | `RaidWideAuras` |
 | **Hour-long buffs**: friendly class buffs of 10 or 30 minutes last an hour | Everyone | `BuffMinutes` |
 | **Happy pets**: hunter pets never get unhappy, no feeding needed | Hunters | `HappyPets` |
@@ -124,3 +124,15 @@ Spells 96400-96405 (`tools/build_epoch_spells.py`, server `spell_dbc` and client
 - Shamans with a shield: **Stonewall Slam** (20): taunt, 5 yd, 10 sec cooldown.
 Spells 100110-100126 (`tools/build_new_spells.py`, server `spell_dbc` and client Spell.dbc in patch-T). Learned
 automatically at the level of each rank.
+
+## Client DBCs (weapon and armor skills for everyone)
+The server opens the skills in memory. The client and AoWoW read the DBC files, so they need the same change, or
+they keep showing the stock class lists:
+
+    python tools/build_open_skills.py            # writes client/patch-T.MPQ/DBFilesClient/ (SkillRaceClassInfo, SkillLineAbility)
+    python tools/build_open_skills.py --client   # also puts them into the client's patch-T.MPQ (game closed)
+
+It starts from patch-5's two files, keeps the rows mod-temucraft-classes adds (its racials), and opens the same skills
+as the module (weapons, Dual Wield, armor, shields); attacks like Shoot keep their classes. Run it again after patch-5
+or mod-temucraft-classes change, and with `--weapons-only` if AnyArmor is turned off. Then copy patch-T to the
+release `patches\` and re-import AoWoW's DBC data.
